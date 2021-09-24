@@ -22,7 +22,7 @@ router.post('/login', (req, res, next) => {
                     if (bcrypt.compareSync(ERS_PASSWORD, user.ERS_PASSWORD)) {
                         const token = generateToken(user);
 
-                        res.status(200).json({ message: `Welcome, ${user.username}`, token })
+                        res.status(200).json({ message: `Welcome, ${user.ERS_USERNAME}`, token, user })
                     } else {
                         res.status(500).json({ message: "Username and password do not match." })
                     }
