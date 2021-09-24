@@ -16,21 +16,21 @@ async function registerUser(neoUser) {
 
 // findAll
 async function findUsers() {
-    return await db("users");
+    return await db('ERS_USERS');
 }
 
 // findByID
 async function findUserByID(key) { 
     key = parseInt(key);
-    return await db("users")
-        .where({userID: key})
+    return await db('ERS_USERS')
+        .where({ERS_USER_ID: key})
         .first();
 }
 
 // findByUsername
 async function findUserByUsername(key) { 
-    return await db("users")
-        .where({username: key})
+    return await db("ERS_USERS")
+        .where({ERS_USERNAME: key})
         .first();
 }
 
