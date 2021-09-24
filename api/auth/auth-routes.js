@@ -9,17 +9,17 @@ const { verifyToken } = require('./auth-middleware');
 const { verifyUserPayload } = require('../users/users-middleware');
 
 router.post('/login', (req, res, next) => {
-    const { username, password } = req.body;
+    const { ERS_USERNAME, ERS_PASSWORD } = req.body;
 
-    if (!username || !password) {
+    if (!ERS_USERNAME || !ERS_PASSWORD) {
         res.status(400).json({ message: "username and password both required" })
     } else {
-        users.findUserByUsername(username)
+        users.findUserByUsername(ERS_USERNAME)
             .then((user) => {
                 if (!user) {
                     res.status(400).json({ message: "No such username exists." });
                 } else { 
-                    if (bcrypt.compareSync(password, user.password)) {
+                    if (bcrypt.compareSync(ERS_PASSWORD, user.ERS_PASSWORD)) {
                         const token = generateToken(user);
 
                         res.status(200).json({ message: `Welcome, ${user.username}`, token })
@@ -35,8 +35,8 @@ router.post('/login', (req, res, next) => {
 router.post('/register', [verifyUserPayload], (req, res, next) => {
     const neoUser = req.body;
 
-    const hash = bcrypt.hashSync(neoUser.password, 12);
-    neoUser.password = hash;
+    const hash = bcrypt.hashSync(neoUser.ERS_PASSWORD, 12);
+    neoUser.ERS_PASSWORD = hash;
 
     users.registerUser(neoUser)
         .then((resp) => {
