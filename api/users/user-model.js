@@ -9,9 +9,9 @@ module.exports = {
 
 // add
 async function registerUser(neoUser) {
-    neoUser.userID = Date.now();
+    neoUser.ERS_USER_ID = Date.now();
 
-    return await db('ERS_USERS').insert(neoUser, ['userID','username'])
+    return await db('ERS_USERS').insert(neoUser, ['ERS_USER_ID','ERS_USERNAME', 'USER_ROLE_ID'])
 }
 
 // findAll
