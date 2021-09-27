@@ -17,7 +17,7 @@ server.use(cors() );
 server.use(logger);
 
 server.use("/api/auth", authRouter);
-server.use("/api/reimb", [verifyToken], reimbRouter);
+// server.use("/api/reimb", [verifyToken], reimbRouter);
 server.use("/api/users", [verifyToken], userRouter);
 
 server.get("/", (req,res) => {
