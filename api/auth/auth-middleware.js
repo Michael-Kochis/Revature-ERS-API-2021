@@ -32,10 +32,9 @@ function verifyToken(req, res, next) {
                 res.status(401).json({ message: "auth token corrupted or expired"})
             } else {
                 req.decoded = decoded;
-                next();
+                //next();
             }
         })
-        next();
     } else { 
         res.status(401).json({ message: "improper or expired auth token"})
     }
