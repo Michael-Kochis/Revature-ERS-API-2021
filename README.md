@@ -6,20 +6,20 @@ Executive Summary
 The Expense Reimbursement System (ERS) will manage the process of reimbursing employees for expenses incurred while on company time. All employees in the company can login and submit requests for reimbursement and view their past tickets and pending requests. Finance managers can log in and view all reimbursement requests and past history for all employees in the company. Finance managers are authorized to approve and deny requests for expense reimbursement.  
 
 ## Technical Requirements  
-- [ ] The application shall employ the DAO design pattern, and properly separate your code into the appropriate layers  
+- [x] The application shall employ the DAO design pattern, and properly separate your code into the appropriate layers  
 - [ ] The back-end system shall use Hibernate to map Java objects to a PostgreSQL database  
 - [ ] The application shall deploy onto a Tomcat Server  
 - [ ] The middle tier shall use Servlet technology for dynamic Web application development  
-- [ ] There will be distinct front end and back end applications.  
-- [ ] The front-end view can use JavaScript and use AJAX to call server-side components. The web pages should look presentable (try using css and bootstrap); I’d rather not see a website from 1995.  
+- [x] There will be distinct front end and back end applications.  
+- [x] The front-end view can use JavaScript and use AJAX to call server-side components. The web pages should look presentable (try using css and bootstrap); I’d rather not see a website from 1995.  
 - [ ] Use Log4J and JUnit. There should be 75% code coverage of your service methods  
-- [ ] (OPTIONAL) Passwords should be encrypted in Java and securely stored in the database  
+- [x] (OPTIONAL) Passwords should be encrypted in Java and securely stored in the database  
 - [ ] (OPTIONAL) Users can upload a document or image of their receipt when submitting reimbursements(optional)  
 - [ ] (OPTIONAL) The application will send an email to employees letting them know that they have been registered as a new user, giving them their temporary password  
  
 ## User Stories
 ### As an employee or manager I can:
-- [ ] Login (10 points)
+- [x] Login (10 points)
 - [ ] Logout (5 points)
 - [ ] Submit a reimbursement request and view all my reimbursement requests (20 points)
 ### As an employee I can:
@@ -50,9 +50,9 @@ Do not spend too much time stuck on a single blocker without asking a batch-mate
 ## Tips on how to start
 - [ ] Start with creating your models based off of the ERD diagram that was provided to you. 
 - [ ] These will be mapped to your database tables using hibernate
-- [ ] The “User Role”, “Reimbursement Type”, and “Reimbursement Status” tables are all LOOK UP TABLES (enum values). 
-- - [ ] ATTENTION: the Database Administrator (you) will need to pre populate these look up tables with data before doing anything else; because they will have not null foreign keys pointing them.
-- - [ ] These look up tables will likely not have DAOs in the Java code
+- [x] The “User Role”, “Reimbursement Type”, and “Reimbursement Status” tables are all LOOK UP TABLES (enum values). 
+- - [x] ATTENTION: the Database Administrator (you) will need to pre populate these look up tables with data before doing anything else; because they will have not null foreign keys pointing them.
+- - [x] These look up tables will likely not have DAOs in the Java code
 - [ ] using TDD is the easiest way to ensure that you hit that code coverage
 - [ ] Your objects should probably be "User", "Reimbursement", "ReimbursementStatus", "ReimbursementType", and "UserRole"
 - [ ] Once your models are setup, create your DAO layer. 

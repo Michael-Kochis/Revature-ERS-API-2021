@@ -3,10 +3,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 
 const authRouter = require('./auth/auth-routes');
-const chartRouter = require('./chart/chart-router');
-const personaRouter = require('./persona/persona-router');
-const rollerRouter = require('./roller/roller-router');
-const spRouter = require('./sp/sp-router');
+const reimbRouter = require('./reimbursements/reimb-router');
 const userRouter = require('./users/users-router');
 
 const { logger } = require('./logger/logger');
@@ -20,11 +17,8 @@ server.use(cors() );
 server.use(logger);
 
 server.use("/api/auth", authRouter);
-server.use("/api/chart", [verifyToken], chartRouter);
+server.use("/api/reimb", [verifyToken], reimbRouter);
 server.use("/api/users", [verifyToken], userRouter);
-server.use("/api/persona", [verifyToken], personaRouter);
-server.use("/api/roller", [verifyToken], rollerRouter);
-server.use("/api/sp", spRouter);
 
 server.get("/", (req,res) => {
     res.status(201).json({message: "Yip, yip, Appa!"});
