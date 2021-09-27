@@ -18,7 +18,7 @@ server.use(logger);
 
 server.use("/api/auth", authRouter);
 server.use("/api/reimb", [verifyToken], reimbRouter);
-//server.use("/api/users", [verifyToken], userRouter);
+server.use("/api/users", [verifyToken], userRouter);
 
 server.get("/", (req,res) => {
     res.status(201).json({message: "Yip, yip, Appa!"});
