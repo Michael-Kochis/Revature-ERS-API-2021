@@ -35,8 +35,8 @@ async function findReimbByStatus(key) {
 
 const updateReimb = async (neoReimb) => {
     await db("ERS_REIMBURSEMENT")
-        .patch(neoReimb)
-        .where({ REIMB_ID: neoReimb.REIMB_ID});
+        .where({ REIMB_ID: neoReimb.REIMB_ID})
+        .update(neoReimb);
     return await findReimbByID(neoReimb.REIMB_ID);
 }
 
