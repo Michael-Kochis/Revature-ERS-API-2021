@@ -1,14 +1,5 @@
 const db = require('../../data/dbConfig');
 
-module.exports = {
-    findReimb,
-    findReimbByUserID,
-    findReimbByStatus,
-    createReimb,
-    removeReimb,
-    updateReimb
-}
-
 // add
 async function createReimb(neoReimb) {
     neoReimb.REIMB_ID = Date.now();
@@ -53,4 +44,13 @@ const removeReimb = async (REIMB_ID) => {
     return await db("ERS_REIMBURSEMENT")
         .where({REIMB_ID})
         .del();
+}
+
+module.exports = {
+    findReimb,
+    findReimbByUserID,
+    findReimbByStatus,
+    createReimb,
+    removeReimb,
+    updateReimb
 }
