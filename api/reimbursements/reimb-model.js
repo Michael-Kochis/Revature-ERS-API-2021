@@ -4,7 +4,9 @@ module.exports = {
     findReimb,
     findReimbByUserID,
     findReimbByStatus,
-    createReimb
+    createReimb,
+    removeReimb,
+    updateReimb
 }
 
 // add
