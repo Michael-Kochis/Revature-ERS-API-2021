@@ -1,13 +1,5 @@
 const db = require('../../data/dbConfig');
 
-module.exports = {
-    findUsers,
-    findUserByID,
-    findUserByUsername,
-    registerUser,
-    updateUser
-}
-
 // add
 async function registerUser(neoUser) {
     neoUser.ERS_USER_ID = Date.now();
@@ -42,3 +34,10 @@ const updateUser = async (neoUser) => {
     return await findUserByID(neoUser.ERS_USER_ID);
 }
 
+module.exports = {
+    findUsers,
+    findUserByID,
+    findUserByUsername,
+    registerUser,
+    updateUser
+}
