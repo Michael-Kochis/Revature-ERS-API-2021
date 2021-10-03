@@ -21,4 +21,16 @@ router.get('/:USER_ID',
     }
 )
 
+router.put('/:USER_ID',
+    (req, res, next) => {
+        let {USER_ID} = req.params;
+        let neoUser = req.body;
+        neoUser.ERS_USER_ID = USER_ID;
+
+        users.updateUser(neoUser)
+            .then(resp => {
+                res.status(201).json(resp)
+            }).catch(next);
+})
+
 module.exports = router;

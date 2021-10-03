@@ -34,3 +34,10 @@ async function findUserByUsername(key) {
         .first();
 }
 
+const updateUSer = async (neoUser) => {
+    await db("ERS_USERS")
+        .where({ ERS_USER_ID: neoUser.ERS_USER_ID})
+        .update(neoUser);
+    return await findUserByID(neoUser.ERS_USER_ID);
+}
+

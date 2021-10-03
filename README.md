@@ -20,17 +20,17 @@ The Expense Reimbursement System (ERS) will manage the process of reimbursing em
 ## User Stories
 ### As an employee or manager I can:
 - [x] Login (10 points)
-- [ ] Logout (5 points)
-- [ ] Submit a reimbursement request and view all my reimbursement requests (20 points)
+- [x] Logout (5 points)
+- [x] Submit a reimbursement request and view all my reimbursement requests (20 points)
 ### As an employee I can:
-- [ ] View the employee home page
+- [x] View the employee home page
 - [ ] View my account information
 - [ ] Update account information
 ### As a manager I can:
-- [ ] View the manager home page
-- [ ] Do the following with reimbursement requests (20 points)
-- [ ] Approve/Deny pending reimbursement requests
-- [ ] View all pending requests of all employees
+- [x] View the manager home page
+- [x] Do the following with reimbursement requests (20 points)
+- [x] Approve/Deny pending reimbursement requests
+- [x] View all pending requests of all employees
 - [ ] View all resolved requests of all employees
 - [ ] View reimbursement requests of a specific employee
 - [ ] View all employees (15 points)
